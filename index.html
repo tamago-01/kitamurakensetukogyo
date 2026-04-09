@@ -1,10 +1,87 @@
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>kitamurakensetukogyo</title>
+    <meta name="description" content="株式会社 北村建設興業のホームページです。新築・リフォーム・リノベーションから古民家再生まで、あなたの暮らしに寄り添う住まいづくりをご提案します。">
+    <meta name="keywords" content="新築, リフォーム, リノベーション">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+    <script src="./js/script.js" defer></script>
+    
 </head>
 <body>
-    
+    <div id="container">
+        <div class="header">
+            <div class="inner">
+                <h1 class="header__logo">
+                    <a href="#">
+                        <span class="header__title">株式会社北村建設興業</span>
+                    </a>
+                </h1>
+                <nav class="header__nav pc">
+                    <ul>
+                        <li>
+                            <a href="#about">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="#service">SERVICE</a>
+                        </li>
+                        <li>
+                            <a href="#works">WORKS</a>
+                        </li>
+                        <li>
+                            <a href="#news">NEWS</a>
+                        </li>
+                        <li>
+                            <a href="#company">COMPANY</a>
+                        </li>
+                        <li>
+                            <a href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <main class="main">
+            <div class="fv">   
+            <div class="splide" role="group" aria-label="Splideの基本的なHTML">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <picture>
+                                <source media="(max-width: 767px)" srcset="./img/sp-fv_01.jpg">
+                                <img src="./img/fv_01.jpg" alt="広い部屋にデスクとpcがある白い空間">
+                            </picture>
+                        </li>
+                        <li class="splide__slide">
+                            <picture>
+                                <source media="(max-width: 767px)" srcset="./img/sp-fv_02.jpg">
+                                <img src="./img/fv_02.jpg" alt="色とりどりの植物とお花">
+                            </picture>
+                        </li>
+                        <li class="splide__slide">
+                            <picture>
+                                <source media="(max-width: 767px)" srcset="./img/sp-fv_03.jpg">
+                                <img src="./img/fv_03.jpg" alt="広い部屋にデスクとpcがある白い空間">
+                            </picture>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fv__overlay"></div>
+             <div class="fv__contents">
+                <div class="fv__catch">
+                    <h2>永遠も。<br class="sp-only">瞬間も。<br><span>あなたと共に。</span></h2>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <footer class="footer"></footer>
+    </div>
 </body>
 </html>
