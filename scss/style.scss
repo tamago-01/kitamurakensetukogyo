@@ -66,10 +66,30 @@ ul {
 .inner {
     max-width: 920px;
     margin-inline: auto;
+    padding-inline: 20px;
+    
 }
 
 .section-title {
     text-align: center;
+    margin-bottom: 68px;
+
+    h2 {
+        display: inline-block;
+        font-size:3rem;
+        color: $color-main;
+        letter-spacing: 30%;
+        line-height: calc(33 / 30);
+    }
+    p {
+        font-size:2rem;
+        color: $color-sub;
+        letter-spacing: 30%;
+        line-height:calc(33 / 20) ;
+        margin-top: 8px;
+
+    }
+
 }
 
 .section-bg {
@@ -330,4 +350,133 @@ ul {
         }
     }
 }
+}
+
+
+.service {
+    padding: 80px 0;
+
+    @include mq-sp {
+        padding: 60px 0;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    
+        &:not(:first-child) {
+            margin-top: 100px;
+            
+            @include mq-sp {
+                margin-top: 60px;
+            }
+        }
+        
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            
+            @include mq-sp {
+                flex-direction: column;
+            }
+            
+            .service__textarea {
+                margin-left: 0;
+                margin-right: -10%;
+                padding: 40px 12% 40px 40px; 
+                
+                @include mq-sp {
+                    margin-right: 0;
+                    padding: 30px 20px;
+                }
+            }
+            
+            .service__image {
+                p {
+                    text-align: right;
+                    
+                    @include mq-sp {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        @include mq-sp {
+            flex-direction: column; 
+        }
+    }
+    
+    &__image {
+        width: 55%;
+        flex-shrink: 0; 
+
+        @include mq-sp {
+            width: 100%;
+        }
+
+        img {
+            aspect-ratio: 600 / 300;
+            object-fit: cover;
+            width: 100%;
+            
+            @include mq-sp {
+                aspect-ratio: 315 / 220;
+            }
+        }
+
+        p {
+            margin-top: 19px;
+            
+            @include mq-sp {
+                margin-top: 10px;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__textarea {
+        width: 55%;
+        flex-shrink: 0; 
+        background-color: $color-main;
+        color: $color-text;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 40px 40px 15%; 
+        margin-top: 110px;
+        margin-left: -15%;
+        
+        position: relative; 
+        z-index: -1; 
+
+        @include mq-sp {
+            width: 100%; 
+            margin-top: 0;
+            margin-left: 0;
+            padding: 30px 20px;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc( 33 / 25);
+            font-weight: 600;
+            margin-bottom: 16px; 
+            
+            @include mq-sp {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: calc( 25 / 16);
+            font-weight: 600;
+            
+            @include mq-sp {
+                font-size: 1.4rem;
+            }
+        }
+    }
 }
