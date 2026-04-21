@@ -24,3 +24,23 @@ window.addEventListener('scroll', () => {
 		header.style.boxShadow = 'none';
 	}
 });
+// モーダル
+$(function() {
+	const animSpeed = 300;
+	const $pageTop = $(`#page-top`);
+
+	$(`.works__item`).on(`click`, function() {
+		const targetID = $(this).data(`target`);
+		$('#' + targetID).fadeIn(animSpeed);
+		$('body').addClass('is-fixed');
+		$pageTop.fadeOut(animSpeed);
+	})
+	$('.modal__overlay, .modal__close').on('click', function() {
+        // モーダルをフェードアウト
+        $('.modal').fadeOut(animSpeed);
+        // 背景のスクロール禁止を解除
+        $('body').removeClass('is-fixed');
+        // TOPへ戻るボタンを再表示
+        $pageTop.fadeIn(animSpeed);
+    });
+});

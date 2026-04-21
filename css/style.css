@@ -370,7 +370,7 @@ ul {
 }
 @media screen and (max-width: 767px) {
   .service {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 }
 .service__item {
@@ -513,4 +513,104 @@ ul {
   .service__textarea p {
     font-size: 1.4rem;
   }
+}
+
+body.is-fixed {
+  overflow: hidden;
+}
+
+.works {
+  padding: 80px 0;
+}
+@media screen and (max-width: 767px) {
+  .works {
+    padding: 50px 0;
+  }
+}
+.works__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 4.347826087%;
+     -moz-column-gap: 4.347826087%;
+          column-gap: 4.347826087%;
+}
+@media screen and (max-width: 767px) {
+  .works__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 22px;
+  }
+}
+.works__item {
+  cursor: pointer;
+  width: 21.7391304348%;
+}
+.works__item .works-item__textarea h3 {
+  margin-top: 19px;
+}
+.works__item .works-item__textarea p {
+  white-space: nowrap;
+}
+@media screen and (max-width: 767px) {
+  .works__item {
+    width: 100%;
+  }
+}
+.works__item .works-item__image {
+  aspect-ratio: 200/200;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 767px) {
+  .works__item .works-item__image {
+    aspect-ratio: 315/250;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.502);
+  cursor: pointer;
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+}
+.modal__close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+.modal__text {
+  margin-top: 9px;
+}
+.modal__text h3 {
+  font-size: 1.6rem;
+  line-height: 1.5625;
 }/*# sourceMappingURL=style.css.map */

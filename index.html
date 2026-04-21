@@ -8,6 +8,7 @@
     <meta name="keywords" content="新築, リフォーム, リノベーション">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
     <script src="./js/script.js" defer></script>
@@ -107,13 +108,10 @@
 
             <section id="service" class="service section-bg">
                 <div class="inner">
-                    
                     <hgroup class="service__title section-title">
                             <h2>SERVICE</h2>
                             <p class="subtitle">サービス</p>
-
                     </hgroup>
-                
                     <div class="service__contents">
                         <div class="service__items">
                             <div class="service__item">
@@ -160,17 +158,120 @@
                                     <p>都市計画から都市開発まで<br>ご提案いたします。<br>公共施設もさらに居心地良く。</p>
                                 </div>
                             </div>
-                        </div>
-                        
-
-                    
+                        </div>   
                     </div>
                 </div>
-
             </section>
-            
+            <section id="works" class="works">
+                <div class="inner">
+                    <hgroup class="works__title section-title">
+                            <h2>WORKS</h2>
+                            <p class="subtitle">施工事例</p>
+                    </hgroup>
+                    <div class="works__contents">
+                        <div class="works__items">
+                            <div class="works__item works-item" data-target="modal01">
+                                <div class="works-item__image">
+                                    <picture>
+                                        <source media="(max-width: 767px)" srcset="./img/sp-works_01.jpg">
+                                        <img src="./img/pc-works_01.jpg" alt="長崎県T.O様自宅">
+                                    </picture>
+                                </div>
+                                <div class="works-item__textarea">
+                                    <h3>【新築】</h3>
+                                    <p>長崎県T.O様自宅</p>
+                                </div>
+                            </div>
+                        
+                       
+                            <div class="works__item works-item" data-target="modal02">
+                                <div class="works-item__image">
+                                    <picture>
+                                        <source media="(max-width: 767px)" srcset="./img/sp-works_02.jpg">
+                                        <img src="./img/pc-works_02.jpg" alt="京都府カトリック丹波教会">
+                                    </picture>
+                                </div>
+                                <div class="works-item__textarea">
+                                    <h3>【リノベーション】</h3>
+                                    <p>京都府カトリック丹波教会</p>
+                                </div>
+                            </div>
+                       
+                            <div class="works__item works-item" data-target="modal03">
+                                <div class="works-item__image">
+                                    <picture>
+                                        <source media="(max-width: 767px)" srcset="./img/sp-works_03.jpg">
+                                        <img src="./img/pc-works_03.jpg" alt="東京都A.F様自宅件事務所">
+                                    </picture>
+                                </div>
+                                <div class="works-item__textarea">
+                                    <h3>【新築】</h3>
+                                    <p>東京都A.F様自宅件事務所</p>
+                                </div>
+                            </div>
+                       
+                        
+                            <div class="works__item works-item" data-target="modal04">
+                                <div class="works-item__image">
+                                    <picture>
+                                        <source media="(max-width: 767px)" srcset="./img/sp-works_04.jpg">
+                                        <img src="./img/pc-works_04.jpg" alt="山形県銀山温泉協同組合">
+                                    </picture>
+                                </div>
+                                <div class="works-item__textarea">
+                                    <h3>【都市開発】</h3>
+                                    <p>山形県銀山温泉協同組合</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>    
         </main>
         <footer class="footer"></footer>
     </div>
+            <div id="modal01" class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <span class="modal__close">×</span>
+                    <img src="./img/modal-works_01.jpg" alt="長崎県T.O様自宅">
+                    <div class="modal__text">
+                        <h3>【新築】長崎県T.O様自宅</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="modal02" class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <span class="modal__close">×</span>
+                    <img src="./img/modal-works_02.jpg" alt="京都府カトリック丹波教会">
+                    <div class="modal__text">
+                        <h3>【リノベーション】京都府カトリック丹波教会</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="modal03" class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <span class="modal__close">×</span>
+                    <img src="./img/modal-works_03.jpg" alt="東京都A.F様自宅件事務所">
+                    <div class="modal__text">
+                        <h3>【新築】東京都A.F様自宅件事務所</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="modal04" class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <span class="modal__close">×</span>
+                    <img src="./img/modal-works_04.jpg" alt="山形県銀山温泉協同組合">
+                    <div class="modal__text">
+                        <h3>【都市開発】山形県銀山温泉協同組合</h3>
+                       
+                    </div>
+                </div>
+            </div>
 </body>
 </html>
