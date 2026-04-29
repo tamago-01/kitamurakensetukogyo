@@ -26,6 +26,7 @@ body {
   letter-spacing: 0;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 /* base 下記黒字3行、必ず記載する */
 
@@ -36,8 +37,11 @@ html {
   word-break: break-all;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
 }
-
+html.is-fixed {
+  overflow: hidden;
+}
 /* PC,SPの非表示 */
 .pc {
   @include mq-sp {
@@ -101,13 +105,18 @@ ul {
   width: 100%;
   height: 80px;
   background-color: transparent;
-  padding-inline: 30px;
+  padding-inline: 20px;
   font-family: $font-ym;
   color: $color-text;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
+  transition: background-color 0.4s;
+
+  &.is-scrolled {
+    background-color: $color-main;
+  }
 
   @include mq-sp {
     padding-inline: 20px;
@@ -117,6 +126,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-inline: 20px;
   }
 
   &__logo {
@@ -236,6 +246,7 @@ ul {
       text-align: center;
       font-weight: 600;
       white-space: nowrap;
+      text-shadow: 5px 5px 5px $color-sub;
 
       @include mq-sp {
         font-size: calc(30 / 375 * 100vw);
@@ -539,17 +550,18 @@ body.is-fixed {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
-    padding: 20px;
+    padding: 15px;
     width: 90%;
     max-width: 800px;
   }
   &__close {
     position: absolute;
-    top: -40px;
-    right: 0;
-    color: #fff;
-    font-size: 30px;
+    top: 0px;
+    right: 0px;
+    color: $color-sub;
+    font-size: 15px;
     cursor: pointer;
+    z-index: 1;
   }
 
   &__text {
@@ -674,13 +686,6 @@ body.is-fixed {
       flex-direction: column;
       row-gap: 20px;
     }
-
-    &::after {
-      content: "";
-      flex: 1;
-      background-color: $color-main;
-      margin-top: 180px;
-    }
   }
 }
 
@@ -723,5 +728,379 @@ body.is-fixed {
     margin-top: 0;
     margin-left: 0;
     padding: 30px 20px;
+  }
+}
+
+.contact {
+  padding: 80px 30px;
+
+  @include mq-sp {
+    padding: 50px 30px;
+  }
+
+  &__text {
+    text-align: left;
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+  }
+  &__form {
+    margin-top: 70px;
+
+    @include mq-sp {
+      margin-top: 50px;
+    }
+  }
+}
+
+.form-area {
+  display: flex;
+  margin-bottom: 50px;
+
+  @include mq-sp {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  dt {
+    width: 170px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+
+    @include mq-sp {
+      display: inline;
+    }
+  }
+
+  dd {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 74px;
+  }
+}
+.form-gender {
+  @include mq-sp {
+    display: flex;
+    align-items: center;
+
+    dt {
+      display: flex;
+      width: 90px;
+      height: 33px;
+    }
+  }
+}
+
+.form-message-area {
+  display: block;
+}
+
+.form-select-item {
+  align-items: center;
+  display: flex;
+  gap: 19px;
+}
+
+.form-check-item {
+  align-items: center;
+  display: flex;
+  width: 200px;
+
+  @include mq-sp {
+    width: 151px;
+  }
+
+  input[type="checkbox"] {
+    margin: 0; // ← ブラウザデフォルトのmarginをリセット
+    padding: 0;
+  }
+}
+
+.form-control,
+.form-select {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  padding: 13px 17px 12px 20px;
+  resize: none;
+  letter-spacing: 0;
+  display: block;
+
+  &::placeholder {
+    color: #a0a0a0;
+    font-size: 1.8rem;
+    line-height: calc(25 / 18);
+  }
+}
+
+.form-textarea {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  padding: 13px 17px 12px 20px;
+  margin-top: 10px;
+  resize: none;
+  letter-spacing: 0;
+  display: block;
+  font-size: 1.8rem;
+  line-height: calc(25 / 18);
+}
+
+input[type="radio"] {
+  appearance: auto; // 標準ブラウザ向け
+  -webkit-appearance: radio; // Safari向け（!importantなし）
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: $color-sub;
+}
+select {
+  font-size: 1.8rem;
+  line-height: calc(25 / 18);
+  padding: 13px 56px 12px 20px;
+  background: url(/img/select-arrow.svg) no-repeat center right 20px;
+}
+
+.form-checkbox-area {
+  display: block;
+
+  span {
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+  }
+}
+
+.form-checkbox__text {
+  padding-left: 40px;
+  position: relative;
+  font-size: 1.8rem;
+  line-height: calc(25 / 18);
+
+  @include mq-sp {
+    padding-left: 30px;
+  }
+}
+
+.form-checkbox-area .form-checkbox__text {
+  @include mq-sp {
+    font-size: 1.6rem;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &::before {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+  }
+
+  &::after {
+    width: 24px;
+    height: 24px;
+    left: 2px;
+    background: url(/img/check.svg) no-repeat center center / contain;
+    opacity: 0;
+  }
+}
+
+.form-checkbox__input {
+  &:checked {
+    & ~ .form-checkbox__text::after {
+      opacity: 1;
+    }
+  }
+}
+.form-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 0;
+  margin-top: 10px;
+
+  @include mq-sp {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 8px;
+  }
+}
+
+.privacy-policy {
+  display: inline;
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+
+  p {
+    font-size: 1.8rem;
+    line-height: calc(31 / 18);
+
+    @include mq-sp {
+      font-size: 1.6rem;
+      line-height: calc(33 / 16);
+    }
+  }
+}
+.privacy-box {
+  background-color: #fff;
+  height: 300px;
+  padding: 40px;
+  overflow-y: scroll;
+  margin-top: 10px;
+
+  @include mq-sp {
+    height: 323px;
+    padding: 30px;
+    margin-top: 0;
+  }
+}
+
+.form-submit {
+  width: 300px;
+  height: 50px;
+  background-color: $color-main;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: calc(33 / 20);
+  cursor: pointer;
+  border: 1px solid $color-main;
+  transition: all 0.4s;
+  text-align: center;
+
+  @include mq-sp {
+    width: 315px;
+    height: 50px;
+  }
+}
+.form-submit:hover {
+  background-color: #fff;
+  color: $color-main;
+}
+.contact__btn {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.form__submit-area {
+  margin-top: 80px;
+
+  @include mq-sp {
+    margin-top: 50px;
+  }
+}
+.footer__content {
+  margin-inline: auto;
+  padding: 80px 30px;
+
+  @include mq-sp {
+    padding: 50px 30px;
+  }
+}
+
+.footer__name {
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+  text-align: center;
+  margin-inline: auto;
+  padding-bottom: 28px;
+  transition: opacity 0.4s;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+.footer-nav__lists {
+  display: flex;
+  justify-content: center;
+  column-gap: 50px;
+  border-top: 1px solid $color-sub;
+  padding-top: 28px;
+
+  @include mq-sp {
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 8px;
+    padding-bottom: 0;
+  }
+}
+
+.footer-nav__link {
+  font-size: 1.8rem;
+  line-height: calc(33 / 18);
+  transition: opacity 0.4s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.footer__sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  margin-top: 28px;
+}
+
+.sns__link {
+  transition: opacity 0.4s;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.footer__copyright-area {
+  background-color: $color-main;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__copyright {
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+  color: $color-text;
+
+  @include mq-sp {
+    text-align: center;
+    line-height: calc(25 / 20);
+  }
+}
+.back-to-top {
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  width: 68px;
+  height: 68px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s,
+    visibility 0.4s;
+  z-index: 100;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
   }
 }
