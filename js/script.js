@@ -86,3 +86,24 @@ $(function () {
     }
   });
 });
+
+$("#js-hamburger").click(function () {
+  $(".hamburger").toggleClass("is-active");
+  $(".header-menu").toggleClass("is-open");
+});
+
+$(function () {
+  $(window).scroll(function () {
+    $(".fade-in").each(function () {
+      // 要素の位置を取得
+      var target = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var height = $(window).height();
+
+      // スクロール量が要素の位置に到達したら
+      if (scroll > target - height + 100) {
+        $(this).addClass("is-show");
+      }
+    });
+  });
+});

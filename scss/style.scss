@@ -16,6 +16,13 @@ $font-ym:
     @content;
   }
 }
+@mixin pc-hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
 
 body {
   font-family: $font-ym;
@@ -101,6 +108,17 @@ ul {
   background-color: rgba(77, 150, 0, 0.1);
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s;
+
+  &.is-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .header {
   width: 100%;
   height: 80px;
@@ -136,10 +154,12 @@ ul {
       align-items: center;
       transition: opacity 0.4s;
 
-      @media (any-hover: hover) {
-        &:hover {
-          opacity: 0.7;
-        }
+      @include mq-sp {
+        height: 50px;
+      }
+
+      @include pc-hover {
+        opacity: 0.7;
       }
     }
   }
@@ -173,7 +193,7 @@ ul {
       position: relative;
 
       @media (max-width: 1000px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
       &::after {
@@ -189,23 +209,96 @@ ul {
         transition: transform 0.3s;
       }
 
-      @media (any-hover: hover) {
-        &:hover::after {
+      @include pc-hover {
+        &::after {
           transform: scale(1, 1);
         }
       }
     }
   }
 }
+// ハンバーガーメニュー
+.hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72px;
+  height: 50px;
+  background-color: $color-text;
+
+  @include mq-pc {
+    display: none;
+  }
+}
+
+.drawer-icon-bar {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 4px;
+  border-radius: 6px;
+  background: $color-main;
+
+  &:nth-of-type(1) {
+    top: 13px;
+  }
+
+  &:nth-of-type(2) {
+    top: 25px;
+  }
+
+  &:nth-of-type(3) {
+    top: 37px;
+  }
+}
+
+.header-menu.is-open {
+  transform: translateX(0);
+}
+
+.hamburger.is-active span:nth-of-type(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.hamburger.is-active span:nth-of-type(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.header-menu {
+  position: fixed;
+  width: 300px;
+  height: 348px;
+  top: 51px;
+  right: 0;
+  background-color: $color-main;
+  transform: translateX(100%);
+  transition: transform 0.4s;
+
+  ul {
+    margin: 0;
+    padding: 12px 0 13px 20px;
+    text-align: left;
+    list-style: none;
+    font-size: 1.8rem;
+    line-height: calc(33 / 18);
+    font-weight: 600;
+  }
+
+  li:not(:last-child) {
+    padding-bottom: 25px;
+  }
+}
+
 .fv {
   position: relative;
-  height: 800px;
-  min-height: 500px;
-  max-height: 800px;
 
-  @include mq-sp {
-    height: 560px;
-  }
   .splide,
   .splide__track,
   .splide__list {
@@ -665,10 +758,9 @@ body.is-fixed {
     width: 80px;
     height: auto;
   }
-  @media (any-hover: hover) {
-    &:hover {
-      transform: translateX(10px);
-    }
+
+  @include pc-hover {
+    transform: translateX(10px);
   }
 }
 .company {
@@ -977,11 +1069,13 @@ select {
     width: 315px;
     height: 50px;
   }
+
+  @include pc-hover {
+    background-color: #fff;
+    color: $color-main;
+  }
 }
-.form-submit:hover {
-  background-color: #fff;
-  color: $color-main;
-}
+
 .contact__btn {
   text-align: center;
   display: flex;
@@ -994,13 +1088,16 @@ select {
     margin-top: 50px;
   }
 }
-.footer__content {
-  margin-inline: auto;
-  padding: 80px 30px;
 
+.footer {
+  padding: 80px 30px;
   @include mq-sp {
     padding: 50px 30px;
   }
+}
+
+.footer__content {
+  margin-inline: auto;
 }
 
 .footer__name {
@@ -1012,10 +1109,8 @@ select {
   transition: opacity 0.4s;
   cursor: pointer;
 
-  @media (any-hover: hover) {
-    &:hover {
-      opacity: 0.7;
-    }
+  @include pc-hover {
+    opacity: 0.7;
   }
 }
 .footer-nav__lists {
@@ -1038,10 +1133,8 @@ select {
   line-height: calc(33 / 18);
   transition: opacity 0.4s;
 
-  @media (any-hover: hover) {
-    &:hover {
-      opacity: 0.7;
-    }
+  @include pc-hover {
+    opacity: 0.7;
   }
 }
 
@@ -1055,10 +1148,9 @@ select {
 
 .sns__link {
   transition: opacity 0.4s;
-  @media (any-hover: hover) {
-    &:hover {
-      opacity: 0.7;
-    }
+
+  @include pc-hover {
+    opacity: 0.7;
   }
 }
 
