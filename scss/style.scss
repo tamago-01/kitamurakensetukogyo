@@ -16,6 +16,13 @@ $font-ym:
     @content;
   }
 }
+
+@mixin mq-tb {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
 @mixin pc-hover {
   @media (any-hover: hover) {
     &:hover {
@@ -82,25 +89,20 @@ ul {
 
 .section-title {
   text-align: center;
-  margin-bottom: 68px;
-
-  @include mq-sp {
-    margin-bottom: 38px;
-  }
 
   h2 {
     display: inline-block;
     font-size: 3rem;
     color: $color-main;
-    letter-spacing: 30%;
-    line-height: calc(33 / 30);
+    letter-spacing: 29%;
+    line-height: calc(34 / 30);
   }
   p {
     font-size: 2rem;
     color: $color-sub;
     letter-spacing: 30%;
     line-height: calc(33 / 20);
-    margin-top: 8px;
+    margin-top: 5px;
   }
 }
 
@@ -123,7 +125,6 @@ ul {
   width: 100%;
   height: 80px;
   background-color: transparent;
-  padding-inline: 20px;
   font-family: $font-ym;
   color: $color-text;
   position: fixed;
@@ -135,7 +136,9 @@ ul {
   &.is-scrolled {
     background-color: $color-main;
   }
-
+  @include mq-tb {
+    padding-inline: 20px;
+  }
   @include mq-sp {
     padding-inline: 20px;
   }
@@ -144,7 +147,6 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 20px;
   }
 
   &__logo {
@@ -177,7 +179,7 @@ ul {
     ul {
       display: flex;
       align-items: center;
-      column-gap: 30px;
+      column-gap: 31px;
 
       @media (max-width: 1000px) {
         column-gap: 20px;
@@ -327,9 +329,15 @@ ul {
 
   &__catch {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 51%;
+    left: 51%;
+    transform: translate(-51%, -49%);
+
+    @include mq-sp {
+      top: 52%;
+      left: 52%;
+      transform: translate(-52%, -52%);
+    }
 
     h2 {
       font-size: calc(40 / 1080 * 100vw);
@@ -345,7 +353,7 @@ ul {
         font-size: calc(30 / 375 * 100vw);
         line-height: calc(60 / 30);
         white-space: nowrap;
-        letter-spacing: calc(6 / 375 * 100vw);
+        letter-spacing: calc(8 / 375 * 100vw);
       }
 
       .sp-only {
@@ -380,15 +388,16 @@ ul {
 
   &__contents {
     position: absolute;
-    top: 50%;
+    top: 51%;
     transform: translateY(-50%);
-    right: calc(438 / 1080 * 100vw);
+    right: calc(437 / 1080 * 100vw);
     display: flex;
     flex-direction: column;
-    row-gap: calc(60 / 1080 * 100vw);
+    row-gap: calc(56 / 1080 * 100vw);
     writing-mode: vertical-rl;
 
     @include mq-sp {
+      top: 50%;
       left: 50%;
       right: auto;
       transform: translate(-50%, -50%);
@@ -402,20 +411,20 @@ ul {
 
   &__title {
     font-size: calc(30 / 1080 * 100vw);
-    line-height: 118%;
+    line-height: 119%;
     letter-spacing: calc(5 / 1080 * 100vw);
     white-space: nowrap;
 
     @include mq-sp {
       writing-mode: vertical-rl;
       font-size: calc(25 / 375 * 100vw);
-      letter-spacing: calc(10 / 1080 * 100vw);
+      letter-spacing: calc(14 / 1080 * 100vw);
     }
   }
 
   &__text {
     font-size: calc(18 / 1080 * 100vw);
-    line-height: calc(30 / 1080 * 100vw);
+    line-height: calc(27 / 1080 * 100vw);
 
     @include mq-sp {
       font-size: calc(16 / 375 * 100vw);
@@ -431,7 +440,7 @@ ul {
       height: max-content;
 
       @include mq-sp {
-        letter-spacing: calc(3.5 / 375 * 100vw);
+        letter-spacing: calc(4 / 375 * 100vw);
         display: block;
         margin-left: calc(10 / 375 * 100vw);
         white-space: nowrap;
@@ -452,16 +461,43 @@ ul {
     padding: 50px 30px;
   }
 
+  &__contents {
+    margin-top: 68px;
+
+    @include mq-sp {
+      margin-top: 38px;
+    }
+  }
+
   &__item {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
     &:not(:first-child) {
-      margin-top: 100px;
+      margin-top: 83px;
 
       @include mq-sp {
-        margin-top: 60px;
+        margin-top: 48px;
+      }
+    }
+
+    &:nth-child(3) {
+      .service__textarea {
+        padding: 52px 30px 40px 25.5%;
+
+        @include mq-sp {
+          width: 100%;
+          margin-top: 5px;
+          margin-left: 0;
+          padding: 21px 20px 10px;
+        }
+
+        @include mq-tb {
+          padding: 30px 28px 30px 18%;
+          margin-top: 100px;
+          margin-left: -40%;
+        }
       }
     }
 
@@ -474,12 +510,16 @@ ul {
 
       .service__textarea {
         margin-left: 0;
-        margin-right: -10%;
-        padding: 40px 12% 40px 40px;
+        margin-right: -20%;
+        padding: 50px 12% 40px 40px;
 
         @include mq-sp {
           margin-right: 0;
-          padding: 30px 20px;
+          padding: 24px 20px 7px;
+        }
+
+        @include mq-tb {
+          padding: 30px 12% 30px 44px;
         }
       }
 
@@ -500,8 +540,12 @@ ul {
   }
 
   &__image {
-    width: 55%;
+    width: 65%;
     flex-shrink: 0;
+
+    @include mq-tb {
+      width: 60%;
+    }
 
     @include mq-sp {
       width: 100%;
@@ -521,43 +565,53 @@ ul {
       margin-top: 19px;
 
       @include mq-sp {
-        margin-top: 10px;
-        font-size: 1.4rem;
+        margin-top: 7px;
+        font-size: 1.6rem;
       }
     }
   }
 
   &__textarea {
-    width: 55%;
+    width: 54%;
     flex-shrink: 0;
     background-color: $color-main;
     color: $color-text;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 40px 40px 15%;
-    margin-top: 110px;
-    margin-left: -15%;
-
+    padding: 52px 30px 40px 26.5%;
+    margin-top: 143px;
+    margin-left: -30%;
     position: relative;
     z-index: -1;
 
+    p {
+      font-size: 1.6rem;
+    }
+
     @include mq-sp {
       width: 100%;
-      margin-top: 0;
+      margin-top: 2px;
       margin-left: 0;
-      padding: 30px 20px;
+      line-height: calc(25 / 16);
+      padding: 20px 20px 11px;
+    }
+
+    @include mq-tb {
+      padding: 30px 28px 30px 18%;
+      margin-top: 100px;
+      margin-left: -40%;
     }
 
     h3 {
       font-size: 2.5rem;
       line-height: calc(33 / 25);
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
 
       @include mq-sp {
         font-size: 2rem;
+        margin-bottom: 15px;
       }
     }
 
@@ -567,7 +621,7 @@ ul {
       font-weight: 600;
 
       @include mq-sp {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
     }
   }
@@ -576,10 +630,18 @@ body.is-fixed {
   overflow: hidden;
 }
 .works {
-  padding: 80px 30px;
+  padding: 80px 30px 96px;
 
   @include mq-sp {
-    padding: 50px 30px;
+    padding: 50px 30px 43px;
+  }
+
+  &__contents {
+    margin-top: 68px;
+
+    @include mq-sp {
+      margin-top: 38px;
+    }
   }
 
   &__items {
@@ -588,7 +650,7 @@ body.is-fixed {
 
     @include mq-sp {
       flex-direction: column;
-      row-gap: 22px;
+      row-gap: 20px;
     }
   }
 
@@ -597,11 +659,12 @@ body.is-fixed {
     width: calc(200 / 920 * 100%);
 
     .works-item__textarea {
-      h3 {
-        margin-top: 19px;
-      }
       p {
-        white-space: nowrap;
+        margin-top: 19px;
+
+        @include mq-sp {
+          margin-top: 10px;
+        }
       }
     }
     @include mq-sp {
@@ -670,7 +733,51 @@ body.is-fixed {
   padding: 80px 30px;
 
   @include mq-sp {
-    padding: 50px 30px;
+    padding: 49px 30px;
+  }
+
+  &__contents {
+    margin-top: 68px;
+
+    @include mq-sp {
+      margin-top: 36px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 69px;
+    padding: 16px 0 9px;
+    border-bottom: 1px solid #55a500;
+
+    @include mq-sp {
+      column-gap: 19px;
+      padding: 17px 0 9px;
+    }
+
+    @include mq-tb {
+      column-gap: 32px;
+    }
+  }
+
+  &__more {
+    font-size: 2rem;
+    color: $color-main;
+    line-height: calc(20 / 20);
+    display: inline-flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    img {
+      margin-top: -7px;
+      width: 80px;
+      height: auto;
+    }
+
+    @include pc-hover {
+      transform: translateX(10px);
+    }
   }
 }
 
@@ -681,7 +788,7 @@ body.is-fixed {
 
   @include mq-sp {
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 48px;
   }
 }
 
@@ -695,26 +802,20 @@ body.is-fixed {
   font-weight: 600;
 }
 
-.news__item {
-  display: flex;
-  column-gap: 69px;
-  padding: 16px 10px 13px;
-  border-bottom: 1px solid #55a500;
-
-  @include mq-sp {
-    column-gap: 19px;
-    padding-right: 23px;
-  }
-}
-
 .news-item__date {
   font-size: 1.6rem;
-  line-height: calc(33 / 16);
+  line-height: calc(33 / 17);
   width: 53px;
   flex-shrink: 0;
+}
+.news-item__text p {
+  font-size: 1.8rem;
 
-  &__text {
-    font-size: 1.8rem;
+  @include mq-sp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 }
 
@@ -733,7 +834,7 @@ body.is-fixed {
   padding: 10px 20px 23px 20px;
 
   @include mq-sp {
-    padding: 10px 20px 23px 20px;
+    padding: 9px 20px 23px 20px;
   }
 }
 
@@ -744,25 +845,6 @@ body.is-fixed {
   margin-bottom: 20px;
 }
 
-.news__more {
-  font-size: 2rem;
-  color: $color-main;
-  line-height: calc(20 / 20);
-  display: inline-flex;
-  flex-direction: column;
-  transition: transform 0.3s;
-  cursor: pointer;
-
-  img {
-    margin-top: -8px;
-    width: 80px;
-    height: auto;
-  }
-
-  @include pc-hover {
-    transform: translateX(10px);
-  }
-}
 .company {
   padding: 80px 30px;
 
@@ -770,6 +852,7 @@ body.is-fixed {
     padding: 50px 30px;
   }
   &__contents {
+    margin-top: 68px;
     display: flex;
     align-items: flex-start;
 
@@ -777,57 +860,94 @@ body.is-fixed {
       width: 100%;
       flex-direction: column;
       row-gap: 20px;
+      margin-top: 38px;
     }
   }
 }
 
-.access__map {
-  width: 60%;
-  flex-shrink: 0;
-  aspect-ratio: 600 / 400;
+.access {
+  &__map {
+    width: 65%;
+    flex-shrink: 0;
+    aspect-ratio: 600 / 400;
 
-  iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
+    @include mq-tb {
+      width: 55%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    @include mq-sp {
+      width: 100%;
+      aspect-ratio: 315 / 300;
+    }
   }
 
-  @include mq-sp {
-    width: 100%;
-    aspect-ratio: 315 / 300;
+  &__info {
+    width: 54%;
+    flex-shrink: 0;
+    margin-left: -19%;
+    background-color: $color-main;
+    color: $color-text;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 45px 45px 23.5%;
+    margin-top: 200px;
+
+    position: relative;
+    z-index: -1;
+
+    @include mq-sp {
+      width: 100%;
+      margin-top: 0;
+      margin-left: 0;
+      padding: 18px 20px 10px;
+    }
+    @include mq-tb {
+      width: 64%;
+      margin-top: 150px;
+    }
   }
-}
 
-.access__info {
-  width: 55%;
-  flex-shrink: 0;
-  margin-left: -15%;
-  background-color: $color-main;
-  color: $color-text;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 49px 50px 42px 20%;
-  margin-top: 205px;
+  &__name {
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+    font-weight: 600;
+    padding-bottom: 9px;
+  }
 
-  position: relative;
-  z-index: -1;
+  &__address {
+    padding-bottom: 10px;
+    font-weight: 600;
+  }
 
-  @include mq-sp {
-    width: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    padding: 30px 20px;
+  &__tel-number {
+    font-size: 2.5rem;
+    line-height: calc(25 / 25);
+    font-weight: 600;
+  }
+
+  &__telephone {
+    padding-bottom: 15px;
   }
 }
 
 .contact {
-  padding: 80px 30px;
+  padding: 78px 140px 80px;
 
   @include mq-sp {
     padding: 50px 30px;
+  }
+
+  &__contents {
+    margin-top: 35px;
   }
 
   &__text {
@@ -839,12 +959,47 @@ body.is-fixed {
     margin-top: 70px;
 
     @include mq-sp {
-      margin-top: 50px;
+      margin-top: 40px;
     }
   }
 }
 
 .form-area {
+  display: flex;
+  margin-bottom: 40px;
+
+  @include mq-sp {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  dt {
+    width: 170px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+
+    @include mq-sp {
+      display: inline;
+    }
+  }
+
+  dd {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 82px;
+
+    @include mq-sp {
+      gap: 40px;
+    }
+  }
+}
+
+.form-area__email {
+  margin-bottom: 50px;
   display: flex;
   margin-bottom: 50px;
 
@@ -870,9 +1025,14 @@ body.is-fixed {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 74px;
+    gap: 82px;
+
+    @include mq-sp {
+      gap: 40px;
+    }
   }
 }
+
 .form-gender {
   @include mq-sp {
     display: flex;
@@ -894,6 +1054,15 @@ body.is-fixed {
   align-items: center;
   display: flex;
   gap: 19px;
+
+  @include mq-sp {
+    gap: 10px;
+  }
+
+  label {
+    font-size: 1.8rem;
+    line-height: calc(25 / 18);
+  }
 }
 
 .form-check-item {
@@ -901,13 +1070,21 @@ body.is-fixed {
   display: flex;
   width: 200px;
 
+  @include mq-tb {
+    width: auto;
+  }
+
   @include mq-sp {
     width: 151px;
   }
 
   input[type="checkbox"] {
-    margin: 0; // ← ブラウザデフォルトのmarginをリセット
-    padding: 0;
+    display: none;
+  }
+
+  label span {
+    font-size: 1.8rem;
+    line-height: calc(25 / 18);
   }
 }
 
@@ -925,6 +1102,11 @@ body.is-fixed {
     color: #a0a0a0;
     font-size: 1.8rem;
     line-height: calc(25 / 18);
+
+    @include mq-sp {
+      font-size: 1.6rem;
+      line-height: calc(25 / 16);
+    }
   }
 }
 
@@ -933,7 +1115,7 @@ body.is-fixed {
   height: 200px;
   background-color: #fff;
   padding: 13px 17px 12px 20px;
-  margin-top: 10px;
+  margin-top: 4px;
   resize: none;
   letter-spacing: 0;
   display: block;
@@ -954,22 +1136,34 @@ select {
   line-height: calc(25 / 18);
   padding: 13px 56px 12px 20px;
   background: url(/img/select-arrow.svg) no-repeat center right 20px;
+
+  @include mq-sp {
+    font-size: 1.6rem;
+    line-height: calc(25 / 16);
+  }
 }
 
 .form-checkbox-area {
   display: block;
+  margin-top: 50px;
+
+  @include mq-sp {
+    margin-top: 30px;
+  }
 
   span {
     font-size: 2rem;
     line-height: calc(33 / 20);
+
+    @include mq-sp {
+      line-height: calc(27 / 20);
+    }
   }
 }
 
 .form-checkbox__text {
   padding-left: 40px;
   position: relative;
-  font-size: 1.8rem;
-  line-height: calc(25 / 18);
 
   @include mq-sp {
     padding-left: 30px;
@@ -1015,15 +1209,31 @@ select {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px 0;
-  margin-top: 10px;
+  margin-top: 11px;
+
+  @include mq-tb {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @include mq-sp {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 8px;
+    margin-top: -2px;
+    margin-bottom: 5px;
+    row-gap: 5px;
+  }
+}
+
+.form-privacy-area {
+  display: block;
+  margin-top: 50px;
+
+  @include mq-sp {
+    margin-top: 30px;
   }
 }
 
 .privacy-policy {
+  margin-top: 10px;
   display: inline;
   font-size: 2rem;
   line-height: calc(33 / 20);
@@ -1049,6 +1259,15 @@ select {
     height: 323px;
     padding: 30px;
     margin-top: 0;
+  }
+  p {
+    font-size: 1.8rem;
+    line-height: calc(31 / 18);
+
+    @include mq-sp {
+      font-size: 1.6rem;
+      line-height: calc(33 / 16);
+    }
   }
 }
 
@@ -1090,34 +1309,65 @@ select {
 }
 
 .footer {
-  padding: 80px 30px;
+  padding: 80px 30px 73px;
   @include mq-sp {
-    padding: 50px 30px;
+    padding: 50px 30px 40px;
+  }
+
+  &__nav {
+    width: 722px;
+    margin-inline: auto;
+    border-top: 1px solid $color-sub;
+
+    @include mq-sp {
+      width: auto;
+    }
+  }
+
+  &__content {
+    margin-inline: auto;
+  }
+
+  &__name {
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+    text-align: center;
+    margin-inline: auto;
+    padding-bottom: 27px;
+    transition: opacity 0.4s;
+    cursor: pointer;
+
+    @include mq-sp {
+      padding-bottom: 18px;
+    }
+
+    @include pc-hover {
+      opacity: 0.7;
+    }
+  }
+  &__sns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    margin-top: 28px;
+  }
+  &__copyright {
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+    color: $color-text;
+
+    @include mq-sp {
+      text-align: center;
+      line-height: calc(25 / 20);
+    }
   }
 }
 
-.footer__content {
-  margin-inline: auto;
-}
-
-.footer__name {
-  font-size: 2rem;
-  line-height: calc(33 / 20);
-  text-align: center;
-  margin-inline: auto;
-  padding-bottom: 28px;
-  transition: opacity 0.4s;
-  cursor: pointer;
-
-  @include pc-hover {
-    opacity: 0.7;
-  }
-}
 .footer-nav__lists {
   display: flex;
   justify-content: center;
   column-gap: 50px;
-  border-top: 1px solid $color-sub;
   padding-top: 28px;
 
   @include mq-sp {
@@ -1125,6 +1375,7 @@ select {
     column-gap: 30px;
     row-gap: 8px;
     padding-bottom: 0;
+    padding-top: 19px;
   }
 }
 
@@ -1136,14 +1387,6 @@ select {
   @include pc-hover {
     opacity: 0.7;
   }
-}
-
-.footer__sns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 30px;
-  margin-top: 28px;
 }
 
 .sns__link {
@@ -1162,16 +1405,6 @@ select {
   justify-content: center;
 }
 
-.footer__copyright {
-  font-size: 2rem;
-  line-height: calc(33 / 20);
-  color: $color-text;
-
-  @include mq-sp {
-    text-align: center;
-    line-height: calc(25 / 20);
-  }
-}
 .back-to-top {
   position: fixed;
   right: 60px;
