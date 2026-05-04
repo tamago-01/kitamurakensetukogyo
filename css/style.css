@@ -1329,7 +1329,7 @@ select {
   font-size: 1.8rem;
   line-height: 1.3888888889;
   padding: 13px 56px 12px 20px;
-  background: url(/img/select-arrow.svg) no-repeat center right 20px;
+  background: url(../img/select-arrow.svg) no-repeat center right 20px;
 }
 @media screen and (max-width: 767px) {
   select {
@@ -1389,7 +1389,7 @@ select {
   width: 24px;
   height: 24px;
   left: 2px;
-  background: url(/img/check.svg) no-repeat center center/contain;
+  background: url(../img/check.svg) no-repeat center center/contain;
   opacity: 0;
 }
 

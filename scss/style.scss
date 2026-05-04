@@ -1135,7 +1135,7 @@ select {
   font-size: 1.8rem;
   line-height: calc(25 / 18);
   padding: 13px 56px 12px 20px;
-  background: url(/img/select-arrow.svg) no-repeat center right 20px;
+  background: url(../img/select-arrow.svg) no-repeat center right 20px;
 
   @include mq-sp {
     font-size: 1.6rem;
@@ -1193,7 +1193,7 @@ select {
     width: 24px;
     height: 24px;
     left: 2px;
-    background: url(/img/check.svg) no-repeat center center / contain;
+    background: url(../img/check.svg) no-repeat center center / contain;
     opacity: 0;
   }
 }
