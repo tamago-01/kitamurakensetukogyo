@@ -94,13 +94,13 @@ ul {
     display: inline-block;
     font-size: 3rem;
     color: $color-main;
-    letter-spacing: 29%;
+    letter-spacing: 0.3em;
     line-height: calc(34 / 30);
   }
   p {
     font-size: 2rem;
     color: $color-sub;
-    letter-spacing: 30%;
+    letter-spacing: 0.3em;
     line-height: calc(33 / 20);
     margin-top: 5px;
   }
@@ -608,6 +608,7 @@ ul {
       line-height: calc(33 / 25);
       font-weight: 600;
       margin-bottom: 17px;
+      white-space: nowrap;
 
       @include mq-sp {
         font-size: 2rem;
@@ -762,6 +763,7 @@ body.is-fixed {
 
   &__more {
     font-size: 2rem;
+    font-weight: 600;
     color: $color-main;
     line-height: calc(20 / 20);
     display: inline-flex;
@@ -806,12 +808,21 @@ body.is-fixed {
   font-size: 1.6rem;
   line-height: calc(33 / 17);
   width: 53px;
+  display: inline-block;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 .news-item__text p {
   font-size: 1.8rem;
 
   @include mq-sp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  @include mq-tb {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;

@@ -66,13 +66,13 @@ ul {
   display: inline-block;
   font-size: 3rem;
   color: #4d9600;
-  letter-spacing: 29%;
+  letter-spacing: 0.3em;
   line-height: 1.1333333333;
 }
 .section-title p {
   font-size: 2rem;
   color: #000000;
-  letter-spacing: 30%;
+  letter-spacing: 0.3em;
   line-height: 1.65;
   margin-top: 5px;
 }
@@ -662,6 +662,7 @@ ul {
   line-height: 1.32;
   font-weight: 600;
   margin-bottom: 17px;
+  white-space: nowrap;
 }
 @media screen and (max-width: 767px) {
   .service__textarea h3 {
@@ -834,6 +835,7 @@ body.is-fixed {
 }
 .news__more {
   font-size: 2rem;
+  font-weight: 600;
   color: #4d9600;
   line-height: 1;
   display: -webkit-inline-box;
@@ -896,14 +898,24 @@ body.is-fixed {
   font-size: 1.6rem;
   line-height: 1.9411764706;
   width: 53px;
+  display: inline-block;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .news-item__text p {
   font-size: 1.8rem;
 }
 @media screen and (max-width: 767px) {
+  .news-item__text p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .news-item__text p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
