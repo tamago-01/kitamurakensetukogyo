@@ -585,9 +585,6 @@ ul {
     position: relative;
     z-index: -1;
 
-    p {
-      font-size: 1.6rem;
-    }
 
     @include mq-sp {
       width: 100%;
@@ -1012,7 +1009,6 @@ body.is-fixed {
 .form-area__email {
   margin-bottom: 50px;
   display: flex;
-  margin-bottom: 50px;
 
   @include mq-sp {
     display: block;

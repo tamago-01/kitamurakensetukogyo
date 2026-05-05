@@ -638,9 +638,6 @@ ul {
   position: relative;
   z-index: -1;
 }
-.service__textarea p {
-  font-size: 1.6rem;
-}
 @media screen and (max-width: 767px) {
   .service__textarea {
     width: 100%;
@@ -1143,7 +1140,6 @@ body.is-fixed {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 50px;
 }
 @media screen and (max-width: 767px) {
   .form-area__email {
