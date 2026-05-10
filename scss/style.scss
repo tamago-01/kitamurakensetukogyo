@@ -356,7 +356,6 @@ ul {
         font-size: calc(30 / 375 * 100vw);
         line-height: calc(60 / 30);
         white-space: nowrap;
-        letter-spacing: 1em;
       }
 
       .sp-only {
@@ -808,7 +807,6 @@ body.is-fixed {
 }
 .news-item__text p {
   font-size: 1.8rem;
- 
 
   @include mq-sp {
     display: -webkit-box;
@@ -1077,16 +1075,16 @@ body.is-fixed {
   display: flex;
   gap: 19px;
 
-  @include mq-sp {
-    gap: 10px;
-  }
-
   label {
     display: flex;
     gap: 19px;
     align-items: center;
     font-size: 1.8rem;
     line-height: calc(25 / 18);
+    
+    @include mq-sp {
+      gap: 10px;
+    }
   }
 }
 

@@ -365,7 +365,6 @@ ul {
     font-size: 8vw;
     line-height: 2;
     white-space: nowrap;
-    letter-spacing: 1em;
   }
 }
 .fv__catch h2 .sp-only {
@@ -1232,11 +1231,6 @@ body.is-fixed {
   display: flex;
   gap: 19px;
 }
-@media screen and (max-width: 767px) {
-  .form-select-item {
-    gap: 10px;
-  }
-}
 .form-select-item label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1247,6 +1241,11 @@ body.is-fixed {
           align-items: center;
   font-size: 1.8rem;
   line-height: 1.3888888889;
+}
+@media screen and (max-width: 767px) {
+  .form-select-item label {
+    gap: 10px;
+  }
 }
 
 .form-check-item {
