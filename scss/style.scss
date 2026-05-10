@@ -107,7 +107,7 @@ ul {
 }
 
 .section-bg {
-  background-color: rgba(77, 150, 0, 0.1);
+  background-color: rgba(77, 150, 0, 0.15);
 }
 
 .fade-in {
@@ -141,6 +141,7 @@ ul {
   }
   @include mq-sp {
     padding-inline: 20px;
+    height: 50px;
   }
 
   .inner {
@@ -201,10 +202,10 @@ ul {
       &::after {
         content: "";
         position: absolute;
-        bottom: 20px;
+        bottom: 24.5px;
         left: 0;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: $color-text;
         transform: scale(0, 1);
         transform-origin: left top;
@@ -212,6 +213,7 @@ ul {
       }
 
       @include pc-hover {
+        opacity: 0.7;
         &::after {
           transform: scale(1, 1);
         }
@@ -332,6 +334,7 @@ ul {
     top: 51%;
     left: 51%;
     transform: translate(-51%, -49%);
+    z-index: 1;
 
     @include mq-sp {
       top: 52%;
@@ -343,7 +346,7 @@ ul {
       font-size: calc(40 / 1080 * 100vw);
       color: $color-text;
       line-height: calc(70 / 40);
-      letter-spacing: calc(12 / 1080 * 100vw);
+      letter-spacing: 0.3em;
       text-align: center;
       font-weight: 600;
       white-space: nowrap;
@@ -353,7 +356,7 @@ ul {
         font-size: calc(30 / 375 * 100vw);
         line-height: calc(60 / 30);
         white-space: nowrap;
-        letter-spacing: calc(8 / 375 * 100vw);
+        letter-spacing: 1em;
       }
 
       .sp-only {
@@ -393,8 +396,9 @@ ul {
     right: calc(437 / 1080 * 100vw);
     display: flex;
     flex-direction: column;
-    row-gap: calc(56 / 1080 * 100vw);
+    row-gap: calc(45 / 1080 * 100vw);
     writing-mode: vertical-rl;
+    white-space: pre-line;
 
     @include mq-sp {
       top: 50%;
@@ -411,45 +415,28 @@ ul {
 
   &__title {
     font-size: calc(30 / 1080 * 100vw);
-    line-height: 119%;
-    letter-spacing: calc(5 / 1080 * 100vw);
+    line-height: 1;
+    letter-spacing: 0.18em;
     white-space: nowrap;
 
     @include mq-sp {
       writing-mode: vertical-rl;
       font-size: calc(25 / 375 * 100vw);
-      letter-spacing: calc(14 / 1080 * 100vw);
+      letter-spacing: 0.19em;
     }
   }
 
   &__text {
     font-size: calc(18 / 1080 * 100vw);
-    line-height: calc(27 / 1080 * 100vw);
+    line-height: calc(48 / 18);
+    letter-spacing: 0.37em;
 
     @include mq-sp {
       font-size: calc(16 / 375 * 100vw);
-      line-height: 1;
+      line-height: calc(26 / 16);
       writing-mode: vertical-rl;
       text-align: start;
-    }
-
-    span {
-      letter-spacing: calc(7 / 1080 * 100vw);
-      display: block;
-      margin-left: calc(20 / 1080 * 100vw);
-      height: max-content;
-
-      @include mq-sp {
-        letter-spacing: calc(4 / 375 * 100vw);
-        display: block;
-        margin-left: calc(10 / 375 * 100vw);
-        white-space: nowrap;
-        height: max-content;
-      }
-
-      &:last-child {
-        margin-left: 0;
-      }
+      letter-spacing: 0.25em;
     }
   }
 }
@@ -471,7 +458,7 @@ ul {
 
   &__item {
     display: flex;
-    align-items: flex-start;
+    // align-items: flex-start;
     justify-content: space-between;
 
     &:not(:first-child) {
@@ -585,7 +572,6 @@ ul {
     position: relative;
     z-index: -1;
 
-
     @include mq-sp {
       width: 100%;
       margin-top: 2px;
@@ -655,6 +641,7 @@ body.is-fixed {
   &__item {
     cursor: pointer;
     width: calc(200 / 920 * 100%);
+    transition: opacity 0.4s;
 
     .works-item__textarea {
       p {
@@ -676,6 +663,9 @@ body.is-fixed {
       @include mq-sp {
         aspect-ratio: 315 / 250;
       }
+    }
+    @include pc-hover {
+      opacity: 0.7;
     }
   }
 }
@@ -713,7 +703,8 @@ body.is-fixed {
     top: 0px;
     right: 0px;
     color: $color-sub;
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1em;
     cursor: pointer;
     z-index: 1;
   }
@@ -746,7 +737,7 @@ body.is-fixed {
     display: flex;
     column-gap: 69px;
     padding: 16px 0 9px;
-    border-bottom: 1px solid #55a500;
+    transition: opacity 0.4s;
 
     @include mq-sp {
       column-gap: 19px;
@@ -756,8 +747,14 @@ body.is-fixed {
     @include mq-tb {
       column-gap: 32px;
     }
-  }
 
+    @include pc-hover {
+      opacity: 0.7;
+    }
+  }
+  &__wrapper {
+    border-bottom: 1px solid #55a500;
+  }
   &__more {
     font-size: 2rem;
     font-weight: 600;
@@ -811,6 +808,7 @@ body.is-fixed {
 }
 .news-item__text p {
   font-size: 1.8rem;
+ 
 
   @include mq-sp {
     display: -webkit-box;
@@ -878,6 +876,7 @@ body.is-fixed {
     width: 65%;
     flex-shrink: 0;
     aspect-ratio: 600 / 400;
+    z-index: 1;
 
     @include mq-tb {
       width: 55%;
@@ -910,17 +909,18 @@ body.is-fixed {
     margin-top: 200px;
 
     position: relative;
-    z-index: -1;
 
     @include mq-sp {
       width: 100%;
       margin-top: 0;
       margin-left: 0;
       padding: 18px 20px 10px;
+      z-index: auto;
     }
     @include mq-tb {
       width: 64%;
       margin-top: 150px;
+      z-index: auto;
     }
   }
 
@@ -940,10 +940,25 @@ body.is-fixed {
     font-size: 2.5rem;
     line-height: calc(25 / 25);
     font-weight: 600;
+
+    a {
+      pointer-events: none;
+
+      @include mq-sp {
+        pointer-events: auto;
+      }
+    }
   }
 
   &__telephone {
     padding-bottom: 15px;
+  }
+  &__email a {
+    transition: opacity 0.4s;
+
+    @include pc-hover {
+      opacity: 0.7;
+    }
   }
 }
 
@@ -1067,6 +1082,9 @@ body.is-fixed {
   }
 
   label {
+    display: flex;
+    gap: 19px;
+    align-items: center;
     font-size: 1.8rem;
     line-height: calc(25 / 18);
   }
@@ -1104,6 +1122,9 @@ body.is-fixed {
   resize: none;
   letter-spacing: 0;
   display: block;
+  font-size: 1.8rem;
+  line-height: calc(25 / 18);
+  cursor: pointer;
 
   &::placeholder {
     color: #a0a0a0;
@@ -1128,11 +1149,12 @@ body.is-fixed {
   display: block;
   font-size: 1.8rem;
   line-height: calc(25 / 18);
+  word-break: break-word;
 }
 
 input[type="radio"] {
-  appearance: auto; // 標準ブラウザ向け
-  -webkit-appearance: radio; // Safari向け（!importantなし）
+  appearance: auto;
+  -webkit-appearance: radio;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -1148,6 +1170,10 @@ select {
     font-size: 1.6rem;
     line-height: calc(25 / 16);
   }
+}
+
+.form-checkbox {
+  cursor: pointer;
 }
 
 .form-checkbox-area {
@@ -1170,6 +1196,8 @@ select {
 
 .form-checkbox__text {
   padding-left: 40px;
+  font-size: 1.8rem;
+  line-height: calc(30 / 18);
   position: relative;
 
   @include mq-sp {
@@ -1267,6 +1295,35 @@ select {
     padding: 30px;
     margin-top: 0;
   }
+
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #e3e3e3;
+    margin: 10px;
+    border-right: 10px solid #ffffff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+    border-right: 10px solid #ffffff;
+  }
+}
+.privacy__section {
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+  h4 {
+    font-size: 1.8rem;
+    line-height: calc(31 / 18);
+
+    @include mq-sp {
+      font-size: 1.6rem;
+      line-height: calc(33 / 16);
+    }
+  }
+
   p {
     font-size: 1.8rem;
     line-height: calc(31 / 18);
@@ -1275,6 +1332,56 @@ select {
       font-size: 1.6rem;
       line-height: calc(33 / 16);
     }
+  }
+}
+.privacy__list {
+  font-size: 1.8rem;
+  line-height: calc(31 / 18);
+
+  @include mq-sp {
+    font-size: 1.6rem;
+    line-height: calc(33 / 16);
+  }
+
+  li {
+    list-style: none;
+    line-height: calc(30 / 18);
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      min-width: 4px;
+      min-height: 4px;
+      border-radius: 50%;
+      background: $color-sub;
+      margin-right: 7px;
+      margin-left: 7px;
+      vertical-align: 0.3em;
+      display: inline-block;
+    }
+  }
+}
+
+.privacy__title {
+  &:not(:first-of-type) {
+    margin-top: 30px;
+  }
+}
+
+.privacy__info {
+  margin-top: 30px;
+}
+
+.privacy__info__item {
+  display: flex;
+  gap: 10px;
+  font-size: 1.8rem;
+  line-height: calc(31 / 18);
+
+  @include mq-sp {
+    font-size: 1.6rem;
+    line-height: calc(33 / 16);
   }
 }
 
@@ -1288,7 +1395,9 @@ select {
   line-height: calc(33 / 20);
   cursor: pointer;
   border: 1px solid $color-main;
-  transition: all 0.4s;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
   text-align: center;
 
   @include mq-sp {
@@ -1324,9 +1433,11 @@ select {
   &__nav {
     width: 722px;
     margin-inline: auto;
-    border-top: 1px solid $color-sub;
 
     @include mq-sp {
+      width: auto;
+    }
+    @include mq-tb {
       width: auto;
     }
   }
@@ -1340,7 +1451,9 @@ select {
     line-height: calc(33 / 20);
     text-align: center;
     margin-inline: auto;
+    display: block;
     padding-bottom: 27px;
+    // border-bottom: 1px solid $color-sub;
     transition: opacity 0.4s;
     cursor: pointer;
 
@@ -1376,6 +1489,15 @@ select {
   justify-content: center;
   column-gap: 50px;
   padding-top: 28px;
+  border-top: 1px solid $color-sub;
+
+  @include mq-tb {
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 8px;
+    padding-bottom: 0;
+    padding-top: 19px;
+  }
 
   @include mq-sp {
     flex-wrap: wrap;
@@ -1434,5 +1556,9 @@ select {
   &.is-show {
     opacity: 1;
     visibility: visible;
+
+    @include pc-hover {
+      opacity: 0.7;
+    }
   }
 }

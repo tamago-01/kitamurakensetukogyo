@@ -11,19 +11,19 @@ new Splide(".splide", {
 }).mount();
 
 // ヘッダー背景色
-const header = document.querySelector(".header");
+// const header = document.querySelector(".header");
 
-header.style.transition = "background-color 0.4s";
+// header.style.transition = "background-color 0.4s";
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 0) {
-    header.style.backgroundColor = "rgba(255, 255, 255, 255 .2)";
-    header.style.boxShadow = "none";
-  } else {
-    header.style.backgroundColor = "transparent";
-    header.style.boxShadow = "none";
-  }
-});
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY > 0) {
+//     header.style.backgroundColor = "rgba(255, 255, 255, 255 .2)";
+//     header.style.boxShadow = "none";
+//   } else {
+//     header.style.backgroundColor = "transparent";
+//     header.style.boxShadow = "none";
+//   }
+// });
 // モーダル
 $(function () {
   const animSpeed = 300;
@@ -90,6 +90,11 @@ $(function () {
 $("#js-hamburger").click(function () {
   $(".hamburger").toggleClass("is-active");
   $(".header-menu").toggleClass("is-open");
+});
+
+$(".header-menu a").on("click", function () {
+    $(".hamburger").removeClass("is-active");
+    $(".header-menu").removeClass("is-open");
 });
 
 $(function () {
