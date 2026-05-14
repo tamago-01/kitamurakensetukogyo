@@ -1082,12 +1082,16 @@ body.is-fixed {
 }
 
 .contact {
-  padding: 78px 140px 80px;
+  padding: 78px 20px 80px;
 }
 @media screen and (max-width: 767px) {
   .contact {
     padding: 50px 30px;
   }
+}
+.contact__content {
+  max-width: 800px;
+  margin-inline: auto;
 }
 .contact__contents {
   margin-top: 35px;
@@ -1550,7 +1554,7 @@ select {
 }
 .privacy__list li {
   list-style: none;
-  line-height: 1.6666666667;
+  line-height: 1.7222222222;
 }
 .privacy__list li::before {
   content: "";
@@ -1643,6 +1647,10 @@ select {
     padding: 50px 30px 40px;
   }
 }
+.footer__content {
+  max-width: 722px;
+  margin-inline: auto;
+}
 .footer__nav {
   width: 722px;
   margin-inline: auto;
@@ -1656,9 +1664,6 @@ select {
   .footer__nav {
     width: auto;
   }
-}
-.footer__content {
-  margin-inline: auto;
 }
 .footer__name {
   font-size: 2rem;

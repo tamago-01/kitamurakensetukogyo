@@ -961,10 +961,15 @@ body.is-fixed {
 }
 
 .contact {
-  padding: 78px 140px 80px;
+  padding: 78px 20px 80px;
 
   @include mq-sp {
     padding: 50px 30px;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin-inline: auto;
   }
 
   &__contents {
@@ -1081,7 +1086,7 @@ body.is-fixed {
     align-items: center;
     font-size: 1.8rem;
     line-height: calc(25 / 18);
-    
+
     @include mq-sp {
       gap: 10px;
     }
@@ -1343,7 +1348,7 @@ select {
 
   li {
     list-style: none;
-    line-height: calc(30 / 18);
+    line-height: calc(31 / 18);
 
     &::before {
       content: "";
@@ -1428,6 +1433,11 @@ select {
     padding: 50px 30px 40px;
   }
 
+  &__content {
+    max-width: 722px;
+    margin-inline: auto;
+  }
+
   &__nav {
     width: 722px;
     margin-inline: auto;
@@ -1438,10 +1448,6 @@ select {
     @include mq-tb {
       width: auto;
     }
-  }
-
-  &__content {
-    margin-inline: auto;
   }
 
   &__name {
