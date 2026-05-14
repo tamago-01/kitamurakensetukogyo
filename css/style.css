@@ -1651,10 +1651,6 @@ select {
   max-width: 722px;
   margin-inline: auto;
 }
-.footer__nav {
-  width: 722px;
-  margin-inline: auto;
-}
 @media screen and (max-width: 767px) {
   .footer__nav {
     width: auto;

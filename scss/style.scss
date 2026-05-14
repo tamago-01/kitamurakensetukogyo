@@ -1439,8 +1439,8 @@ select {
   }
 
   &__nav {
-    width: 722px;
-    margin-inline: auto;
+    // width: 722px;
+    // margin-inline: auto;
 
     @include mq-sp {
       width: auto;
