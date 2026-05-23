@@ -57,6 +57,9 @@ $(function () {
   $(window).on("scroll", function () {
     const fvHeight = $fv.outerHeight(); // FVの高さを取得
 
+    // ↓ これを追加：モーダルが開いていたら何もしない
+    if ($(".modal:visible").length > 0) return;
+
     if ($(this).scrollTop() > fvHeight) {
       $backToTop.addClass("is-show"); // FVを超えたら表示
     } else {
@@ -93,8 +96,8 @@ $("#js-hamburger").click(function () {
 });
 
 $(".header-menu a").on("click", function () {
-    $(".hamburger").removeClass("is-active");
-    $(".header-menu").removeClass("is-open");
+  $(".hamburger").removeClass("is-active");
+  $(".header-menu").removeClass("is-open");
 });
 
 $(function () {
