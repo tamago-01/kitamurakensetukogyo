@@ -17,6 +17,12 @@ $font-ym:
   }
 }
 
+@mixin mq-900 {
+  @media screen and (min-width: 768px) and (max-width: 900px) {
+    @content;
+  }
+}
+
 @mixin mq-tb {
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     @content;
@@ -461,7 +467,7 @@ ul {
 
   &__item {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
 
     @include mq-sp {
       flex-direction: column;
@@ -485,14 +491,19 @@ ul {
         }
       }
       .service__textarea {
-        padding: 50px 40px 42px;
+        padding: 50px 40px 37px;
 
         @include mq-sp {
           padding: 20px 20px 12px;
         }
 
-        @include mq-tb {
-          padding: 30px 20px 20px 30px;
+        // @include mq-tb {
+        //   padding: 30px 20px 20px 30px;
+        //   margin-top: 110px;
+        // }
+
+        @include mq-900 {
+          padding: 50px 10px 35px 35px;
           margin-top: 110px;
         }
 
@@ -516,6 +527,7 @@ ul {
     position: relative;
     z-index: 10;
     flex-shrink: 0;
+    padding-bottom: 48px;
 
     @include mq-tb {
       width: 60%;
@@ -523,6 +535,7 @@ ul {
 
     @include mq-sp {
       width: 100%;
+      padding-bottom: 0;
     }
 
     p {
@@ -537,7 +550,7 @@ ul {
   &__items {
     display: flex;
     flex-direction: column;
-    row-gap: 80px;
+    row-gap: 83px;
     @include mq-sp {
       row-gap: 45px;
     }
@@ -547,8 +560,7 @@ ul {
     flex: 1;
     padding: 50px 68px 42px;
     padding-right: 0;
-
-    margin-top: 145px;
+    // margin-top: 145px;
     color: $color-text;
     position: relative;
 
@@ -556,9 +568,9 @@ ul {
       margin-top: 0;
       padding: 19px 20px 12px;
     }
-    @include mq-tb {
-      padding: 30px 20px 20px 20px;
-      margin-top: 110px;
+
+    @include mq-900 {
+      padding: 50px 20px 35px 50px;
     }
 
     &::before {
@@ -575,8 +587,8 @@ ul {
         height: 100%;
       }
 
-      @include mq-tb {
-        width: 420px;
+      @include mq-900 {
+        width: 450px;
       }
     }
 
@@ -849,11 +861,7 @@ ul {
     transform: translate(-50%, -50%);
     background: #fff;
     padding: 15px;
-    width: 450px;
-
-    @include mq-sp {
-      width: 315px;
-    }
+    width: min(450px, calc(100% - 60px));
   }
   &__close {
     position: absolute;
@@ -869,7 +877,7 @@ ul {
   &__text {
     margin-top: 9px;
 
-    h3 {
+    p {
       font-size: 1.6rem;
       line-height: calc(25 / 16);
     }
@@ -1016,13 +1024,14 @@ ul {
   &__contents {
     margin-top: 68px;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
 
     @include mq-sp {
       width: 100%;
       flex-direction: column;
       row-gap: 20px;
       margin-top: 38px;
+      align-items: initial;
     }
   }
 }
@@ -1033,6 +1042,7 @@ ul {
     flex-shrink: 0;
     aspect-ratio: 600 / 400;
     z-index: 1;
+    margin-bottom: 66px;
 
     @include mq-tb {
       width: 60%;
@@ -1048,24 +1058,19 @@ ul {
     @include mq-sp {
       width: 100%;
       aspect-ratio: 315 / 300;
+      margin-bottom: 0;
     }
   }
 
   &__info {
-    width: 54%;
-    flex-shrink: 0;
-    margin-left: -19%;
-    background-color: $color-main;
+    flex: 1;
     color: $color-text;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px 45px 45px 23.5%;
-    margin-top: 200px;
-
+    padding: 48px 0 45px 45px;
     position: relative;
 
+    address {
+      position: relative;
+    }
     @include mq-sp {
       width: 100%;
       margin-top: 0;
@@ -1075,8 +1080,22 @@ ul {
     }
     @include mq-tb {
       width: 59%;
-      margin-top: 150px;
+      // margin-top: 150px;
       z-index: auto;
+    }
+
+    &::before {
+      content: "";
+      width: 500px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $color-main;
+
+      @include mq-sp {
+        width: 100%;
+      }
     }
   }
 
@@ -1602,7 +1621,7 @@ select {
 }
 
 .footer {
-  padding-top: 80px;
+  padding-top: 83px;
   @include mq-sp {
     padding-top: 50px;
   }
@@ -1667,11 +1686,11 @@ select {
       line-height: calc(25 / 20);
     }
   }
-  .sns__list {
-    width: 28px;
-    height: 28px;
-    display: flex;
-  }
+  // .sns__list {
+  //   width: 28px;
+  //   height: 28px;
+  //   display: flex;
+  // }
 }
 
 .footer-nav__lists {
@@ -1709,11 +1728,11 @@ select {
 }
 
 .sns__link {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.4s;
+  display: block;
+  // align-items: center;
+  // width: 100%;
+  // height: 100%;
+  // transition: opacity 0.4s;
 
   @include pc-hover {
     opacity: 0.7;
