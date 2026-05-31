@@ -8,6 +8,7 @@
     <meta name="description" content="株式会社 北村建設興業のホームページです。新築・リフォーム・リノベーションから古民家再生まで、あなたの暮らしに寄り添う住まいづくりをご提案します。">
     <meta name="keywords" content="新築, リフォーム, リノベーション">
     <meta name="robots" content="noindex">
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -457,45 +458,42 @@
                                 </dd>
                             </dl>
                             <div class="form-area form-checkbox-area fade-in">
-                                <div>
-                                    <span>何を見て当社HPを知りましたか？<br class="sp">(複数回答可)</span><span
-                                        class="required">&emsp;*</span>
-                                </div>
-                                <div>
-                                    <div class="form-checkbox-grid">
 
-                                        <div class="form-check-item">
-                                            <label class="form-checkbox">
-                                                <input type="checkbox" name="form-checkbox"
-                                                    class="form-checkbox__input">
-                                                <span class="form-checkbox__text">インターネット</span>
-                                            </label>
-                                        </div>
+                                <!-- <p>何を見て当社HPを知りましたか？<br class="sp">(複数回答可)</p><p class="required">&emsp;*</p> -->
 
-                                        <div class="form-check-item">
-                                            <label class="form-checkbox">
-                                                <input type="checkbox" name="form-checkbox"
-                                                    class="form-checkbox__input">
-                                                <span class="form-checkbox__text">チラシ</span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check-item">
-                                            <label class="form-checkbox">
-                                                <input type="checkbox" name="form-checkbox"
-                                                    class="form-checkbox__input">
-                                                <span class="form-checkbox__text">住宅展示場</span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check-item">
-                                            <label class="form-checkbox">
-                                                <input type="checkbox" name="form-checkbox"
-                                                    class="form-checkbox__input">
-                                                <span class="form-checkbox__text">看板</span>
-                                            </label>
-                                        </div>
+                                <p>何を見て当社HPを知りましたか？<br class="sp">(複数回答可)<span class="required">&emsp;*</span></p>
 
+
+                                <div class="form-checkbox-grid">
+
+                                    <div class="form-check-item">
+                                        <label class="form-checkbox">
+                                            <input type="checkbox" name="form-checkbox" class="form-checkbox__input">
+                                            <span class="form-checkbox__text">インターネット</span>
+                                        </label>
                                     </div>
+
+                                    <div class="form-check-item">
+                                        <label class="form-checkbox">
+                                            <input type="checkbox" name="form-checkbox" class="form-checkbox__input">
+                                            <span class="form-checkbox__text">チラシ</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check-item">
+                                        <label class="form-checkbox">
+                                            <input type="checkbox" name="form-checkbox" class="form-checkbox__input">
+                                            <span class="form-checkbox__text">住宅展示場</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check-item">
+                                        <label class="form-checkbox">
+                                            <input type="checkbox" name="form-checkbox" class="form-checkbox__input">
+                                            <span class="form-checkbox__text">看板</span>
+                                        </label>
+                                    </div>
+
                                 </div>
+
                                 <div>
                                     <div class="form-checkbox-grid">
 
@@ -650,57 +648,58 @@
             </section>
         </main>
         <footer class="footer">
+            <div class="footer__body">
+                <div class="footer__content">
+                    <a href="#" class="footer__name">
+                        <span class="ib_span footer-name">株式会社 北村建設興業</span>
+                    </a>
+                    <nav class="footer__nav footer-nav">
+                        <ul class="footer-nav__lists">
+                            <li class="footer-nav__list">
+                                <a href="#about" class="footer-nav__link">ABOUT</a>
+                            </li>
+                            <li class="footer-nav__list">
+                                <a href="#service" class="footer-nav__link">SERVICE</a>
+                            </li>
+                            <li class="footer-nav__list">
+                                <a href="#works" class="footer-nav__link">WORKS</a>
+                            </li>
+                            <li class="footer-nav__list">
+                                <a href="#news" class="footer-nav__link">NEWS</a>
+                            </li>
+                            <li class="footer-nav__list">
+                                <a href="#company" class="footer-nav__link">COMPANY</a>
+                            </li>
+                            <li class="footer-nav__list">
+                                <a href="#contact" class="footer-nav__link">CONTACT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-            <div class="footer__content">
-                <a href="#" class="footer__name">
-                    <span class="ib_span footer-name">株式会社 北村建設興業</span>
-                </a>
-                <nav class="footer__nav footer-nav">
-                    <ul class="footer-nav__lists">
-                        <li class="footer-nav__list">
-                            <a href="#about" class="footer-nav__link">ABOUT</a>
-                        </li>
-                        <li class="footer-nav__list">
-                            <a href="#service" class="footer-nav__link">SERVICE</a>
-                        </li>
-                        <li class="footer-nav__list">
-                            <a href="#works" class="footer-nav__link">WORKS</a>
-                        </li>
-                        <li class="footer-nav__list">
-                            <a href="#news" class="footer-nav__link">NEWS</a>
-                        </li>
-                        <li class="footer-nav__list">
-                            <a href="#company" class="footer-nav__link">COMPANY</a>
-                        </li>
-                        <li class="footer-nav__list">
-                            <a href="#contact" class="footer-nav__link">CONTACT</a>
-                        </li>
-                    </ul>
-                </nav>
+                <ul class="footer__sns sns">
+                    <li class="sns__list">
+                        <a href="#" class="sns__link sns__link--x" target="_blank" rel="noopener noreferrer">
+                            <img src="./img/icon-twitter.svg" alt="x">
+                        </a>
+                    </li>
+                    <li class="sns__list">
+                        <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer">
+                            <img src="./img/icon-fb.svg" alt="facebook">
+                        </a>
+                    </li>
+                    <li class="sns__list">
+                        <a href="#" class="sns__link sns__link--youtube" target="_blank" rel="noopener noreferrer">
+                            <img src="./img/icon-youtube.svg" alt="youtube">
+                        </a>
+                    </li>
+                    <li class="sns__list">
+                        <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer">
+                            <img src="./img/icon-instagram.svg" alt="instagram">
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <ul class="footer__sns sns">
-                <li class="sns__list">
-                    <a href="#" class="sns__link sns__link--x" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/icon-twitter.svg" alt="x">
-                    </a>
-                </li>
-                <li class="sns__list">
-                    <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/icon-fb.svg" alt="facebook">
-                    </a>
-                </li>
-                <li class="sns__list">
-                    <a href="#" class="sns__link sns__link--youtube" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/icon-youtube.svg" alt="youtube">
-                    </a>
-                </li>
-                <li class="sns__list">
-                    <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer">
-                        <img src="./img/icon-instagram.svg" alt="instagram">
-                    </a>
-                </li>
-            </ul>
 
             <a href="#" class="back-to-top" aria-label="トップへ戻る">
                 <img src="./img/top-arrow.svg" alt="トップへ戻るの矢印">

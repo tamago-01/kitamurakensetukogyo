@@ -33,7 +33,7 @@ $(function () {
   $(`.works__item`).on(`click`, function () {
     const targetID = $(this).data(`target`);
     $("#" + targetID).fadeIn(animSpeed);
-    $("body, html").addClass("is-fixed");
+    $("body").addClass("is-fixed");
     $pageTop.fadeOut(animSpeed);
     $backToTop.removeClass("is-show");
     $backToTop.addClass("is-hidden");
@@ -43,7 +43,7 @@ $(function () {
     // モーダルをフェードアウト
     $(".modal").fadeOut(animSpeed);
     // 背景のスクロール禁止を解除
-    $("body, html").removeClass("is-fixed");
+    $("body").removeClass("is-fixed");
     // TOPへ戻るボタンを再表示
     $pageTop.fadeIn(animSpeed);
     $backToTop.removeClass("is-hidden");

@@ -1,4 +1,18 @@
 @charset "UTF-8";
+html {
+  font-size: 62.5%;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-all;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+@media screen and (max-width: 767px) {
+  html {
+    scroll-padding-top: 50px;
+  }
+}
+
 body {
   font-family: "游明朝", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", "Noto Serif JP", serif;
   font-weight: 500;
@@ -10,24 +24,7 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-
-/* base 下記黒字3行、必ず記載する */
-html {
-  font-size: 62.5%;
-  -webkit-appearance: none;
-  -webkit-text-size-adjust: 100%;
-  word-break: break-all;
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-  overflow-x: hidden;
-}
-@media screen and (max-width: 767px) {
-  html {
-    scroll-padding-top: 50px;
-  }
-}
-
-html.is-fixed {
+body.is-fixed {
   overflow: hidden;
 }
 
@@ -83,7 +80,7 @@ ul {
 }
 
 .section-bg {
-  background-color: rgba(77, 150, 0, 0.15);
+  background-color: rgba(77, 150, 0, 0.1);
 }
 
 .fade-in {
@@ -612,7 +609,7 @@ ul {
 }
 @media screen and (min-width: 768px) and (max-width: 900px) {
   .service__textarea {
-    padding: 50px 20px 35px 50px;
+    padding: 50px 0px 35px 50px;
   }
 }
 .service__textarea::before {
@@ -756,8 +753,13 @@ ul {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: #fff;
-  padding: 15px;
+  padding: 15px 15px 6px;
   width: min(450px, 100% - 60px);
+}
+@media screen and (max-width: 767px) {
+  .modal__content {
+    padding: 20px 20px 14px;
+  }
 }
 .modal__close {
   position: absolute;
@@ -945,8 +947,8 @@ ul {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .company {
@@ -1084,7 +1086,7 @@ ul {
 }
 
 .contact {
-  padding: 78px 20px 80px;
+  padding: 78px 30px 80px;
 }
 @media screen and (max-width: 767px) {
   .contact {
@@ -1409,12 +1411,12 @@ select {
     margin-top: 30px;
   }
 }
-.form-checkbox-area span {
+.form-checkbox-area p {
   font-size: 2rem;
   line-height: 1.65;
 }
 @media screen and (max-width: 767px) {
-  .form-checkbox-area span {
+  .form-checkbox-area p {
     line-height: 1.35;
   }
 }
@@ -1656,22 +1658,21 @@ select {
   }
 }
 
-.footer {
+.footer__body {
   padding-top: 83px;
+  padding-bottom: 80px;
+  padding-inline: 30px;
 }
 @media screen and (max-width: 767px) {
-  .footer {
+  .footer__body {
     padding-top: 50px;
+    padding-bottom: 48px;
   }
 }
 .footer__content {
   max-width: 722px;
   margin-inline: auto;
-}
-@media screen and (max-width: 767px) {
-  .footer__content {
-    padding-inline: 30px;
-  }
+  text-align: center;
 }
 @media screen and (max-width: 767px) {
   .footer__nav {
@@ -1688,11 +1689,10 @@ select {
   line-height: 1.65;
   text-align: center;
   margin-inline: auto;
-  display: block;
+  display: inline-block;
   padding-bottom: 27px;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-  cursor: pointer;
 }
 @media screen and (max-width: 767px) {
   .footer__name {
@@ -1718,12 +1718,6 @@ select {
      -moz-column-gap: 30px;
           column-gap: 30px;
   margin-top: 28px;
-  margin-bottom: 80px;
-}
-@media screen and (max-width: 767px) {
-  .footer__sns {
-    margin-bottom: 48px;
-  }
 }
 .footer__copyright {
   font-size: 2rem;
@@ -1789,6 +1783,8 @@ select {
 
 .sns__link {
   display: block;
+  width: 28px;
+  height: auto;
 }
 @media (any-hover: hover) {
   .sns__link:hover {
