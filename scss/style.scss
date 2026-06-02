@@ -497,13 +497,10 @@ ul {
           padding: 20px 20px 12px;
         }
 
-        // @include mq-tb {
-        //   padding: 30px 20px 20px 30px;
-        //   margin-top: 110px;
-        // }
+      
 
         @include mq-900 {
-          padding: 50px 10px 35px 35px;
+          padding: 50px 0px 35px 42px;
           margin-top: 110px;
         }
 
@@ -570,7 +567,7 @@ ul {
     }
 
     @include mq-900 {
-      padding: 50px 0px 35px 50px;
+      padding: 50px 0px 35px 42px;
     }
 
     &::before {
