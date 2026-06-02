@@ -876,6 +876,12 @@ ul {
     line-height: 1em;
     cursor: pointer;
     z-index: 1;
+
+    @include mq-sp {
+      top: 2px;
+      right: 2px;
+      font-size: 20px;
+    }
   }
 
   &__text {
@@ -905,7 +911,7 @@ ul {
   &__item {
     display: flex;
     column-gap: 69px;
-    padding: 16px 0 9px;
+    padding: 17px 0 10px;
     transition: opacity 0.4s;
 
     @include mq-sp {
@@ -953,7 +959,7 @@ ul {
 
   @include mq-sp {
     flex-direction: column;
-    row-gap: 51px;
+    row-gap: 48px;
   }
 }
 
@@ -1005,18 +1011,17 @@ ul {
 
 .news__block,
 .blog__block {
-  padding: 10px 20px 23px 20px;
+  padding: 10px 20px 19px 20px;
 
   @include mq-sp {
-    padding: 9px 20px 23px 20px;
+    padding: 11px 20px 23px 20px;
   }
 }
 
 .more_click {
   display: flex;
   justify-content: flex-end;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  padding-top: 21px;
 }
 
 .company {
@@ -1046,7 +1051,7 @@ ul {
     flex-shrink: 0;
     aspect-ratio: 600 / 400;
     z-index: 1;
-    margin-bottom: 66px;
+    margin-bottom: 62px;
 
     @include mq-tb {
       width: 60%;
@@ -1069,7 +1074,7 @@ ul {
   &__info {
     flex: 1;
     color: $color-text;
-    padding: 48px 0 45px 45px;
+    padding: 49px 0 42px 45px;
     position: relative;
 
     address {
@@ -1173,11 +1178,11 @@ ul {
 
 .form-area {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 42px;
 
   @include mq-sp {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
   }
 
   dt {
@@ -1378,7 +1383,7 @@ select {
 
 .form-checkbox-area {
   display: block;
-  margin-top: 50px;
+  margin-top: 48px;
 
   @include mq-sp {
     margin-top: 30px;
@@ -1513,6 +1518,10 @@ select {
 .privacy__section {
   &:not(:first-child) {
     margin-top: 30px;
+
+    @include mq-sp {
+      margin-top: 33px;
+    }
   }
   h3 {
     font-size: 1.8rem;
@@ -1647,11 +1656,11 @@ select {
   }
 
   &__nav {
-    // width: 722px;
-    // margin-inline: auto;
+    margin-top: 24px;
 
     @include mq-sp {
       width: auto;
+      margin-top: 20px;
     }
     @include mq-tb {
       width: auto;
@@ -1664,11 +1673,10 @@ select {
     text-align: center;
     margin-inline: auto;
     display: inline-block;
-    padding-bottom: 27px;
     transition: opacity 0.4s;
 
     @include mq-sp {
-      padding-bottom: 18px;
+      // padding-bottom: 18px;
     }
 
     @include pc-hover {
@@ -1682,7 +1690,6 @@ select {
     justify-content: center;
     column-gap: 30px;
     margin-top: 28px;
-    // margin-bottom: 80px;
     @include mq-sp {
       // margin-bottom: 48px;
     }
@@ -1697,11 +1704,6 @@ select {
       line-height: calc(25 / 20);
     }
   }
-  // .sns__list {
-  //   width: 28px;
-  //   height: 28px;
-  //   display: flex;
-  // }
 }
 
 .footer-nav__lists {

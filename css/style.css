@@ -771,6 +771,13 @@ ul {
   cursor: pointer;
   z-index: 1;
 }
+@media screen and (max-width: 767px) {
+  .modal__close {
+    top: 2px;
+    right: 2px;
+    font-size: 20px;
+  }
+}
 .modal__text {
   margin-top: 9px;
 }
@@ -802,7 +809,7 @@ ul {
   -webkit-column-gap: 69px;
      -moz-column-gap: 69px;
           column-gap: 69px;
-  padding: 16px 0 9px;
+  padding: 17px 0 10px;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
@@ -873,7 +880,7 @@ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    row-gap: 51px;
+    row-gap: 48px;
   }
 }
 
@@ -931,12 +938,12 @@ ul {
 
 .news__block,
 .blog__block {
-  padding: 10px 20px 23px 20px;
+  padding: 10px 20px 19px 20px;
 }
 @media screen and (max-width: 767px) {
   .news__block,
   .blog__block {
-    padding: 9px 20px 23px 20px;
+    padding: 11px 20px 23px 20px;
   }
 }
 
@@ -947,8 +954,7 @@ ul {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  padding-top: 21px;
 }
 
 .company {
@@ -989,7 +995,7 @@ ul {
       flex-shrink: 0;
   aspect-ratio: 600/400;
   z-index: 1;
-  margin-bottom: 66px;
+  margin-bottom: 62px;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .access__map {
@@ -1014,7 +1020,7 @@ ul {
       -ms-flex: 1;
           flex: 1;
   color: #ffffff;
-  padding: 48px 0 45px 45px;
+  padding: 49px 0 42px 45px;
   position: relative;
 }
 .access__info address {
@@ -1118,12 +1124,12 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 42px;
 }
 @media screen and (max-width: 767px) {
   .form-area {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
   }
 }
 .form-area dt {
@@ -1404,7 +1410,7 @@ select {
 
 .form-checkbox-area {
   display: block;
-  margin-top: 50px;
+  margin-top: 48px;
 }
 @media screen and (max-width: 767px) {
   .form-checkbox-area {
@@ -1540,6 +1546,11 @@ select {
 .privacy__section:not(:first-child) {
   margin-top: 30px;
 }
+@media screen and (max-width: 767px) {
+  .privacy__section:not(:first-child) {
+    margin-top: 33px;
+  }
+}
 .privacy__section h3 {
   font-size: 1.8rem;
   line-height: 1.7222222222;
@@ -1674,9 +1685,13 @@ select {
   margin-inline: auto;
   text-align: center;
 }
+.footer__nav {
+  margin-top: 24px;
+}
 @media screen and (max-width: 767px) {
   .footer__nav {
     width: auto;
+    margin-top: 20px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -1690,14 +1705,8 @@ select {
   text-align: center;
   margin-inline: auto;
   display: inline-block;
-  padding-bottom: 27px;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-}
-@media screen and (max-width: 767px) {
-  .footer__name {
-    padding-bottom: 18px;
-  }
 }
 @media (any-hover: hover) {
   .footer__name:hover {
